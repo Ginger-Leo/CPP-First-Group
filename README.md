@@ -1,5 +1,6 @@
-C++ Learning Journey 📚
-Welcome to my first C++ project! This repository showcases my learning process as I explore C++ programming, starting from the basics and moving toward more complex concepts.
+C++ Learning Journey
+
+📚 Welcome to my first C++ project! This repository showcases my learning process as I explore C++ programming, starting from the basics and moving toward more complex concepts.
 
 🖥️ About This Project
 This repository contains simple C++ projects, exercises, and practice code as I learn the language. It includes tasks like working with variables, functions, control structures, and more advanced features as I progress.
