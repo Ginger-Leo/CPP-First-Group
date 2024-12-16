@@ -18,11 +18,11 @@ int main(void)
 			std::cout << "Selection selected.\nselection: SEARCH" << std::endl;
 			pb.searchPhoneBook();	// search method 
 		}
-		if (str == "all"){
-			pb.printall();	// test feature
-		}
+		// if (str == "all"){
+		// 	pb.printall();	// test feature
+		// }
 		else
-			std::cout << "incorrect input. try again." << std::endl;
+			std::cout << "Incorrect input. try again.\nPlease try to re-select the selection." << std::endl;
 		
 	}
 	std::cout << "Goodbye!" << std::endl;
