@@ -12,11 +12,11 @@ int main(void)
 		std::getline(std::cin, str);
 		if (str == "ADD"){
 			std::cout << "Selection selected.\nselection: ADD" << std::endl;
-			pb.addPhoneBook();		// add method
+			pb.addPhoneBook();		// add method (function)
 		}
 		if (str == "SEARCH"){
 			std::cout << "Selection selected.\nselection: SEARCH" << std::endl;
-			pb.searchPhoneBook();	// search method 
+			pb.searchPhoneBook();	// search method (function)
 		}
 		// if (str == "all"){
 		// 	pb.printall();	// test feature
