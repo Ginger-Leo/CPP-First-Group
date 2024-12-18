@@ -11,19 +11,24 @@ OFILES  	= $(CFILES:.cpp=.o)
 
 
 %.o			: %.cpp
-				$(CC) $(FLAGS) -c $< -o $@
+			@	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME)		: $(OFILES)
-				$(CC) $(FLAGS) -o $(NAME) $(OFILES)
+			@	$(CC) $(FLAGS) -o $(NAME) $(OFILES)
+			@ echo "made"
 
 all			: $(NAME)
 
 clean		:
-				rm -f $(OFILES)
+			@	rm -f $(OFILES) 
+			@ echo "cleaned up"
+
 
 fclean		: clean
-				rm -f $(NAME)
+			@rm -f $(NAME)
+			@ echo "files cleaned f-style!"
 
 re			: fclean all
+			@echo "re-ed up"
 
 .PHONY		: all clean fclean re

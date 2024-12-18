@@ -1,0 +1,35 @@
+
+Memory updated
+I'd be glad to help you with the "Zombie Horde" project! Here's a general breakdown of how to approach it:
+
+Project Overview:
+The goal of the Zombie Horde project is to create a program that manages a group of zombies using C++ classes, dynamic memory, and possibly arrays or vectors.
+
+Step-by-step Guide:
+1. Class Design:
+Create a Zombie class:
+Attributes: name (private).
+Methods:
+announce(): Prints a message like “I am [name]... BraiiiiiiinnnzzzZ...”
+Constructor/Destructor: For setup and cleanup.
+2. Zombie Horde Creation:
+Create a function Zombie* zombieHorde(int N, std::string name);
+Dynamically allocate an array of N zombies.
+Initialize each zombie's name.
+Return the pointer to the array.
+3. Main Function:
+Call zombieHorde() with a number and a name.
+Use a loop to call announce() for each zombie.
+Free the memory after using delete[].
+Next Steps:
+Set up Your Files:
+
+Zombie.hpp: Class declaration.
+Zombie.cpp: Class implementation.
+main.cpp: Entry point.
+Write the Makefile:
+
+Add compilation rules and targets.
+Test & Debug:
+
+Test different numbers of zombies and ensure memory is managed correctly.
