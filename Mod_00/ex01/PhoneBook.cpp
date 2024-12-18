@@ -88,10 +88,11 @@ void PhoneBook::searchPhoneBook(){
 	x = 0;
 	while (x < 8){	
     	if (this->_contacts[x].getIndex() == n){
-        	std::cout << std::left << std::setw(10) << PhoneBook::truncate(std::to_string(this->_contacts[x].getIndex()), 10) << "|"
-                  << std::left << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getFirstName(), 10) << "|"
-                  << std::left << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getLastName(), 10) << "|"
-                  << std::left << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getNickName(), 10) << std::endl;
+        	std::cout << _contacts[x].getFirstName() << std::endl 
+			<< _contacts[x].getLastName() << std::endl 
+			<< _contacts[x].getNickName() << std::endl
+			<< _contacts[x].getPhoneNumber() << std::endl
+			<< _contacts[x].getDarkestSecret() << std::endl;
 				  return;
     	}
     	x++;
