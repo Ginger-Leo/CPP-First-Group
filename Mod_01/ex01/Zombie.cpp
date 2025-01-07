@@ -2,18 +2,25 @@
 
 Zombie::Zombie(void)
 {
-	std::cout <<"generic zombie created." << std::endl;
 }
-Zombie::Zombie(std::string _name)
+Zombie::Zombie(std::string name)
 {
+	_name = name;
 	std::cout << _name << " created." << std::endl;
 }
 Zombie::~Zombie()
 {
 	std::cout << this->_name << " destroyed!" << std::endl;
-	
 }
-void Zombie::announce(std::string _name)
+std::string Zombie::getName()
 {
-	std::cout << this-> _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return this->_name;
+}
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
+}
+void Zombie::announce()
+{
+	std::cout << this->_name << std::endl;
 }
