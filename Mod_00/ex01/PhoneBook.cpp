@@ -87,12 +87,13 @@ void PhoneBook::searchPhoneBook(){
 	}
 	x = 0;
 	while (x < 8){	
-    	if (this->_contacts[x].getIndex() == n){
-        	std::cout << _contacts[x].getFirstName() << std::endl 
-			<< _contacts[x].getLastName() << std::endl 
-			<< _contacts[x].getNickName() << std::endl
-			<< _contacts[x].getPhoneNumber() << std::endl
-			<< _contacts[x].getDarkestSecret() << std::endl;
+    	if (this->_contacts[x].getIndex() == n)
+		{
+        	std::cout << "First name: " << _contacts[x].getFirstName() << std::endl 
+			<< "Last name: " << _contacts[x].getLastName() << std::endl 
+			<< "Nickname: " << _contacts[x].getNickName() << std::endl
+			<< "Phone number: " << _contacts[x].getPhoneNumber() << std::endl
+			<< "Darkest secret: " << _contacts[x].getDarkestSecret() << std::endl << std::endl;
 				  return;
     	}
     	x++;
