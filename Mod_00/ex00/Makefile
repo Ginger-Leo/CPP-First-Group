@@ -1,6 +1,8 @@
 NAME		= megaphone
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
+OBJ_DIR 	= obj
+INCLUDES	= ./
 CFILES 		= megaphone.cpp
 
 OFILES  	= $(CFILES:.cpp=.o) 
