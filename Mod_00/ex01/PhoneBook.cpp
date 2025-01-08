@@ -64,12 +64,16 @@ void PhoneBook::addPhoneBook(){
 void PhoneBook::searchPhoneBook(){
 	int x = 0;
 	std::string str;
+	std::cout << std::right << std::setw(10) << "Index" << 
+			std::right << std::setw(10) << "First Name" << 
+			std::right << std::setw(10) << "Last Name" << 
+			std::right << std::setw(10) << "Nickname" << std::endl;
 	while (x < 8){	
     	if (this->_contacts[x].getIndex() != -1){
-        	std::cout << std::left << std::setw(10) << PhoneBook::truncate(std::to_string(this->_contacts[x].getIndex()), 10) << "|"
-                  << std::left << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getFirstName(), 10) << "|"
-                  << std::left << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getLastName(), 10) << "|"
-                  << std::left << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getNickName(), 10) << std::endl;
+        	std::cout << std::right << std::setw(10) << PhoneBook::truncate(std::to_string(this->_contacts[x].getIndex()), 10) << "|"<< 
+			std::right << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getFirstName(), 10) << "|"<< 
+			std::right << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getLastName(), 10) << "|"<< 
+			std::right << std::setw(10) << PhoneBook::truncate(this->_contacts[x].getNickName(), 10) << std::endl;
     	}
     	x++;
 	}
@@ -86,6 +90,12 @@ void PhoneBook::searchPhoneBook(){
 		std::cout << "invalid argument." << std::endl;
 	}
 	x = 0;
+	if (n < 0)
+	{
+		std::cout << "out of range." << std::endl;
+		return ;
+	}
+
 	while (x < 8){	
     	if (this->_contacts[x].getIndex() == n)
 		{
