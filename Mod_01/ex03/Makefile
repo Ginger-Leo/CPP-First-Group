@@ -2,7 +2,10 @@ NAME		= violence
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
 
-CFILES 		= 	main.cpp 
+CFILES 		= 	main.cpp \
+				HumanA.cpp \
+				HumanB.cpp \
+				Weapon.cpp
 			  	
 OFILES  	= $(CFILES:.cpp=.o) 
 

@@ -2,22 +2,25 @@
 
 Weapon::Weapon()
 {
+    _type = "empty handed";
 }
 
-Weapon::Weapon(std::string)
+Weapon::Weapon(std::string type)
 {
+    this-> _type = type;
 }
 
 Weapon::~Weapon()
 {
 }
 
-std::const& getType()
+const std::string& Weapon::getType() const
 {
-
+    const std::string& type = this->_type;
+    return type;
 }
 
-void setType()
+void Weapon::setType(std::string type)
 {
-
+    this->_type = type;
 }
