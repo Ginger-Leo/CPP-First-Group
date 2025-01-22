@@ -2,8 +2,8 @@ NAME		= fixed
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
 
-CFILES 		= 	main.cpp \
-				converter.cpp
+CFILES 		= 	main.cpp Fixed.cpp
+				
 				
 			  	
 OFILES  	= $(CFILES:.cpp=.o) 
