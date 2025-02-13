@@ -17,11 +17,15 @@ class Fixed
         Fixed& operator=(const Fixed& ref);     // Copy assignment operator
         ~Fixed();                               // Destructor
 
-        float toFloat( void ) const;
-        int toInt( void ) const;
+        float toFloat(void) const;
+        int toInt(void) const;
 
         static Fixed max(const Fixed& a, const Fixed& b); 
         static Fixed min(const Fixed& a, const Fixed& b);
+        Fixed operator+(const Fixed& a) const; 
+        Fixed operator-(const Fixed& a) const;
+        Fixed operator*(const Fixed& a) const;
+        Fixed operator/(const Fixed& a) const;
 
         bool operator>(const Fixed& a) const; 
         bool operator<(const Fixed& a) const;
@@ -30,10 +34,6 @@ class Fixed
         bool operator!=(const Fixed& a) const;
         bool operator==(const Fixed& a) const;
 
-        Fixed operator+(const Fixed& a) const; 
-        Fixed operator-(const Fixed& a) const;
-        Fixed operator*(const Fixed& a) const;
-        Fixed operator/(const Fixed& a) const;
 
         Fixed& operator++();    // Prefix increment
         Fixed operator++(int);  // Postfix increment

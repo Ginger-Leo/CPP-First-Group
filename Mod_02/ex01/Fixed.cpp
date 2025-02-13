@@ -42,11 +42,8 @@ Fixed &Fixed::operator=(const Fixed& ref)
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj) 
 {
-
     os << obj.toFloat(); // assuming toFloat() converts Fixed to float
-
     return os;
-
 }
 		
 float Fixed::toFloat( void ) const

@@ -2,103 +2,121 @@
 #include <cmath>
 #include <iostream>
 
-Fixed::Fixed() : _value(0) //default constructor
+// Default constructor
+Fixed::Fixed() : _value(0) 
 {
-    std::cout << "default constuctor called\n";
+    std::cout << "default constructor called\n";
 }
 
-Fixed::Fixed(const int n) : _value(n << _fractionalBits) // int constructor
+// Int constructor
+Fixed::Fixed(const int n) : _value(n << _fractionalBits) 
 {
-    std::cout << "int constuctor called\n";
+    std::cout << "int constructor called\n";
 }
 
-Fixed::Fixed(float f) : _value(roundf(f * (1 << _fractionalBits))) // float constructor
+// Float constructor
+Fixed::Fixed(const float f) : _value(roundf(f * (1 << _fractionalBits))) 
 {
-    std::cout << "float constuctor called\n";
+    std::cout << "float constructor called\n";
 }
 
-Fixed::Fixed(const Fixed& ref) : _value(ref._value) // copy constructor
+// Copy constructor
+Fixed::Fixed(const Fixed& ref) : _value(ref._value) 
 {
-    std::cout << "copy constuctor called\n";
+    std::cout << "copy constructor called\n";
 }
 
-Fixed& Fixed::operator=(const Fixed& ref) // copy assignment operator
+// Copy assignment operator
+Fixed& Fixed::operator=(const Fixed& ref) 
 {
-    if (this != &ref) 
+    if (this != &ref) {
         this->_value = ref._value;
-    std::cout << "copy assignment operator called\n";  
+    }
+    std::cout << "copy assignment operator called\n";
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj) // overload operator
+// Overload operator<<
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) 
 {
     os << obj.toFloat();
-    return os; 
+    return os;
 }
 
-float Fixed::toFloat( void ) const
+// Convert to float
+float Fixed::toFloat(void) const 
 {
     return static_cast<float>(this->_value) / (1 << this->_fractionalBits);
 }
 
-int Fixed::toInt( void ) const
+// Convert to int
+int Fixed::toInt(void) const 
 {
     return this->_value >> this->_fractionalBits;
-}	
+}
 
-Fixed Fixed::max(const Fixed& a, const Fixed& b)
+// Max function
+Fixed Fixed::max(const Fixed& a, const Fixed& b) 
 {
     return (a > b) ? a : b;
 }
 
-Fixed Fixed::min(const Fixed& a, const Fixed& b)
-{
-    return (a < b) ? a : b; // Ternaries baby!!
-}
-
-/*
-Fixed Fixed::min(Fixed& a, Fixed& b) 
-{
-    return (a > b) ? a : b;
-}
-
-Fixed Fixed::min(Fixed& a, Fixed& b) const
+// Min function
+Fixed Fixed::min(const Fixed& a, const Fixed& b) 
 {
     return (a < b) ? a : b;
 }
-*/
 
-bool Fixed::operator>=(const Fixed& a) const 
+// Arithmetic operators
+Fixed Fixed::operator+(const Fixed& a) const 
 {
-    return this->_value >= a._value;
+    return Fixed(this->toFloat() + a.toFloat());
 }
 
-bool Fixed::operator<=(const Fixed& a) const 
+Fixed Fixed::operator-(const Fixed& a) const 
 {
-    return this->_value <= a._value;
+    return Fixed(this->toFloat() - a.toFloat());
 }
 
-bool Fixed::operator!=(const Fixed& a) const 
+Fixed Fixed::operator*(const Fixed& a) const 
 {
-    return this->_value != a._value;
+    return Fixed(this->toFloat() * a.toFloat());
 }
 
-bool Fixed::operator==(const Fixed& a) const 
+Fixed Fixed::operator/(const Fixed& a) const 
 {
-    return this->_value == a._value;
+    return Fixed(this->toFloat() / a.toFloat());
 }
 
-bool Fixed::operator>(const Fixed& a) const
+// Increment and decrement operators
+Fixed& Fixed::operator++() 
 {
-    return this->_value > a._value;
+    ++this->_value;
+    return *this;
 }
 
-bool Fixed::operator<(const Fixed& a) const
+Fixed Fixed::operator++(int) 
 {
-   return this->_value < a._value;
+    Fixed temp = *this;
+    ++this->_value;
+    return temp;
 }
 
-Fixed::~Fixed()
+Fixed& Fixed::operator--() 
 {
+    --this->_value;
+    return *this;
+}
 
+Fixed Fixed::operator--(int)
+{
+    Fixed temp = *this;
+    --this->_value;
+    return temp;
+}
+
+// Destructor
+Fixed::~Fixed() 
+{
+    std::cout << "destructor called\n";
 }
