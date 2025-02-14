@@ -5,25 +5,25 @@
 // Default constructor
 Fixed::Fixed() : _value(0) 
 {
-    std::cout << "default constructor called\n";
+   //std::cout << "default constructor called\n";
 }
 
 // Int constructor
 Fixed::Fixed(const int n) : _value(n << _fractionalBits) 
 {
-    std::cout << "int constructor called\n";
+   // std::cout << "int constructor called\n";
 }
 
 // Float constructor
 Fixed::Fixed(const float f) : _value(roundf(f * (1 << _fractionalBits))) 
 {
-    std::cout << "float constructor called\n";
+   // std::cout << "float constructor called\n";
 }
 
 // Copy constructor
 Fixed::Fixed(const Fixed& ref) : _value(ref._value) 
 {
-    std::cout << "copy constructor called\n";
+    //std::cout << "copy constructor called\n";
 }
 
 // Copy assignment operator
@@ -32,7 +32,7 @@ Fixed& Fixed::operator=(const Fixed& ref)
     if (this != &ref) {
         this->_value = ref._value;
     }
-    std::cout << "copy assignment operator called\n";
+   // std::cout << "copy assignment operator called\n";
     return *this;
 }
 
@@ -161,6 +161,6 @@ Fixed Fixed::operator--(int)
 // Destructor
 Fixed::~Fixed() 
 {
-    std::cout << "destructor called\n";
+    //std::cout << "destructor called\n";
 }
 
