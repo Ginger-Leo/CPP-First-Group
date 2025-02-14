@@ -13,7 +13,7 @@ class ClapTrap
     
     public:
         // Orthadox Canonical Form
-        ClapTrap();
+        ClapTrap(std::string);
         ~ClapTrap();
         ClapTrap(ClapTrap&);
         ClapTrap& operator=(const ClapTrap& rhs); 
