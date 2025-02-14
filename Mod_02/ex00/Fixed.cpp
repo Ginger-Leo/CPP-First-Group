@@ -15,14 +15,12 @@ Fixed::Fixed( const Fixed& ref )
 {
     std::cout << "copy constructor called\n";
     this->_value = ref._value;
-   // this->_fractional = ref._fractional;
 }
 
 Fixed &Fixed::operator=( const Fixed& ref )
 {
     if (this != &ref) {
         this->_value = ref._value;
-       // this->_fractional = ref._fractional;
     }
     std::cout << "copy assignment operater called\n";
     return *this;

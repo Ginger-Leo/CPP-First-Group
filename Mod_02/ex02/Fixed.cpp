@@ -88,6 +88,49 @@ Fixed Fixed::operator/(const Fixed& a) const
     return Fixed(this->toFloat() / a.toFloat());
 }
 
+bool Fixed::operator>(const Fixed& a) const
+{
+	if (this->_value > a._value)
+		return true;
+	else
+		return false;
+} 
+bool Fixed::operator<(const Fixed& a) const
+{
+	if (this->_value < a._value)
+		return true;
+	else
+		return false;
+}
+bool Fixed::operator>=(const Fixed& a) const
+{
+	if (this->_value >= a._value)
+		return true;
+	else
+		return false;
+}
+bool Fixed::operator<=(const Fixed& a) const
+{
+	if (this->_value <= a._value)
+		return true;
+	else
+		return false;
+}
+bool Fixed::operator!=(const Fixed& a) const
+{
+	if (this->_value != a._value)
+		return true;
+	else
+		return false;
+}
+bool Fixed::operator==(const Fixed& a) const
+{
+	if (this->_value == a._value)
+		return true;
+	else
+		return false;
+}
+
 // Increment and decrement operators
 Fixed& Fixed::operator++() 
 {
@@ -120,3 +163,4 @@ Fixed::~Fixed()
 {
     std::cout << "destructor called\n";
 }
+
