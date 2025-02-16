@@ -8,7 +8,7 @@ class ClapTrap
     private:
         std::string _name;
         int _hitPoints;
-        int _energyPoints,
+        int _energyPoints;
         int _attackDamage;
     
     public:
@@ -24,14 +24,15 @@ class ClapTrap
         void beRepaired(unsigned int amount);
 
         // Getter and Setters
-        std::string getName();
+        std::string getName() const;
         void setName(std::string);
-        int getHP();
+        int getHP()const;
         void setHP(int);
-        int getEP();
+        int getEP()const;
         void setEP(int);
-        int getAttack();
-        void setAttack(int);
-
+        int getAP() const;
+        void setAP(int);
+        
         friend std::ostream& operator<<(std::ostream& os, const ClapTrap& obj);
-};
+
+    };
