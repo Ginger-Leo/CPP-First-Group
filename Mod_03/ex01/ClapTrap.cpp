@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 // Orthadox Canonical Form
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
 }
 ClapTrap::~ClapTrap(){
 }
@@ -22,7 +22,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 void ClapTrap::attack(const std::string& target)
 {
     std::cout << "ClapTrap " <<  getName() << " attacks " << target << ", causing " << getAP() << " points of damage!"<< std::endl;
-    this->_energyPoints -= 1;
+    _energyPoints -= 1;
+    std::cout << "1 energy point lost\n";
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
@@ -35,6 +36,8 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     _hitPoints += amount;
     std::cout << getName() << " repaired " << amount << " HP\n";
+    std::cout << "1 energy point lost\n";
+    _energyPoints -= 1;
 }
 
 //Getters and Setters
