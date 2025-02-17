@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+//#include "ScavTrap.hpp"
+//#include "FragTrap.hpp"
 
 
 class ClapTrap

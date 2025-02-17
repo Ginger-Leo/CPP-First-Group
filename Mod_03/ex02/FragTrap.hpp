@@ -15,3 +15,4 @@ class FragTrap : public ClapTrap
         void highFivesGuys(void);
 
 };
+

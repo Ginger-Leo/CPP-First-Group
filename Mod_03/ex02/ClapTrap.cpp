@@ -1,11 +1,13 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 // Orthadox Canonical Form
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
-    std::cout << "default claptrap contructor\n"
+    std::cout << "default claptrap contructor\n";
 }
 ClapTrap::~ClapTrap(){
-    std::cout << "default claptrap destructor\n"
+    std::cout << "default claptrap destructor\n";
 }
 ClapTrap::ClapTrap(ClapTrap& rhs) : _name(rhs._name), _hitPoints(rhs._hitPoints), _energyPoints(rhs._energyPoints), _attackDamage(rhs._attackDamage){
 }
