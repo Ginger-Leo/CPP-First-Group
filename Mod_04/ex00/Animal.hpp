@@ -10,7 +10,7 @@ class Animal
     public:
         Animal();
         Animal(Animal&);
-        ClapTrap& operator=(const ClapTrap& rhs); 
+        Animal& operator=(const Animal& rhs); 
         ~Animal();
         makeSound();
 };

@@ -2,6 +2,7 @@
 
 Animal::Animal()
 {
+	type = "Basic Animal"
     std::cout << "default Animal constructor called\n";
 }
 Animal::Animal(Animal& ref) : type(ref.type) 
