@@ -1,7 +1,9 @@
+#pragma once
 #include <iostream>
-#include <stdlib>
+#include <string.h>
 
-class Animal
+
+class Animal 
 {
     protected:
         std::string type;
@@ -11,6 +13,10 @@ class Animal
         Animal();
         Animal(Animal&);
         Animal& operator=(const Animal& rhs); 
-        ~Animal();
-        makeSound();
+        virtual ~Animal();
+
+        std::string getType() const;
+        void setType(std::string);
+
+        virtual void makeSound() const;
 };

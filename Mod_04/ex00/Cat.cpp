@@ -1,29 +1,44 @@
 #include "Cat.hpp"
 
-	Cat()
+	Cat::Cat() : type("Cat like Animal")
 	{
-		type = "Cat like Animal"
 		std::cout << "default Cat constructor called\n";
-
 	}
 
-	~Cat()
+	Cat::~Cat()
 	{
     	std::cout << "default Cat destructor called\n";
 	}
 
-	Cat(Cat& rhs)
+	Cat::Cat(Cat& ref) : type(ref.type)
 	{
 		std	::cout << "default Cat copy constructor called\n";
 	}
 
-	Cat& operator=(const Cat& rhs)
+	Cat& Cat::operator=(const Cat& rhs)
 	{
-    	std::cout << "default Cat copy assignment operator called\n";
+		if (this != &rhs)
+		{
+			this-> type = rhs.type;
+		}
+		std::cout << "default Cat copy assignment operator called\n";
+	
+		return *this;
 	} 
 
-	Cat::virtual void makeSound()
-	{
+    std::string Cat::getType() const
+    {
+        return type;
+    }
 
+    void Cat::setType(std::string newType)
+    {
+        type = newType;
+    }
+
+	void Cat::makeSound() const
+	{
+        std::cout << "Cat sounding noise\n";
 	}
+
 

@@ -1,19 +1,24 @@
+#pragma once
 #include <iostream>
-#include <stdlib>
+#include <string.h>
 #include "Animal.hpp"
 
 
 class Dog : public Animal
 {
     protected:
-
+        std::string type;
     private:
-
+    
     public:
 		Dog();
-		~Dog();
+		virtual ~Dog();
 		Dog(Dog&);
 		Dog& operator=(const Dog&); 
-		virtual void makeSound();
+
+        std::string getType() const;
+        void setType(std::string);
+
+		virtual void makeSound() const; // will use own function, not base class function
     
 };
