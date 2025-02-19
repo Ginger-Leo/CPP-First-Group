@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {

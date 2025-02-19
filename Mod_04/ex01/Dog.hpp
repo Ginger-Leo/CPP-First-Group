@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 
 class Dog : public Animal
@@ -9,7 +10,7 @@ class Dog : public Animal
     protected:
         std::string type;
     private:
-    
+       Brain *idea;
     public:
 		Dog();
 		virtual ~Dog();

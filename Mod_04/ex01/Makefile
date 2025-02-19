@@ -2,7 +2,7 @@ NAME		= Fire
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
 
-CFILES 		= 	main.cpp Animal.cpp Dog.cpp Cat.cpp
+CFILES 		= 	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 				
 			  	
 OFILES  	= $(CFILES:.cpp=.o) 
