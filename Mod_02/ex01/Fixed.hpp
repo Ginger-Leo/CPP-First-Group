@@ -16,9 +16,9 @@ class Fixed
 		~Fixed();								// Default destructor
 		Fixed(const Fixed& rhs);				// Copy cons
 		Fixed& operator=(const Fixed& rhs);		// Copy assignment operator
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 		float toFloat( void ) const;
 		int toInt( void ) const;		
 		int getRawBits() const;
 		void setRawBits(int const);
 };
+		std::ostream& operator<<(std::ostream& os, const Fixed& obj);

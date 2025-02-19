@@ -40,5 +40,5 @@ class Fixed
         Fixed& operator--();    // Prefix decrement
         Fixed operator--(int);  // Postfix decrement
 
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 };
+        std::ostream& operator<<(std::ostream& os, const Fixed& obj);
