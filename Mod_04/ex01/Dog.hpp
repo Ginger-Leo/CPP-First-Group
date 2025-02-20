@@ -10,7 +10,7 @@ class Dog : public Animal
     protected:
         std::string type;
     private:
-       Brain *idea;
+      Brain *dog_brain;
     public:
 		Dog();
 		virtual ~Dog();

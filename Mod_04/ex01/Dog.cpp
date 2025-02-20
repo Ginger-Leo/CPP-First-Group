@@ -3,11 +3,13 @@
 	Dog::Dog() : type("Dog like Animal") 
 	{
 		std::cout << "default Dog constructor called\n";
+		dog_brain = new Brain;
 	}
 
 	Dog::~Dog()
 	{
 		std::cout << "default Dog destructor called\n";	
+		delete dog_brain;
 	}
 
 	Dog::Dog(Dog& ref) : type(ref.type)
