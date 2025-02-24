@@ -1,12 +1,22 @@
 #include "ClapTrap.hpp"
 
 // Orthadox Canonical Form
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(){
+	std::cout << "claptrap default constructor\n";
 }
+
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0), _dothing (true) {
+		std::cout << "claptrap named constructor\n";
+}
+
 ClapTrap::~ClapTrap(){
+		std::cout << "claptrap default destructor\n";
 }
-ClapTrap::ClapTrap(ClapTrap& rhs) : _name(rhs._name), _hitPoints(rhs._hitPoints), _energyPoints(rhs._energyPoints), _attackDamage(rhs._attackDamage){
+
+ClapTrap::ClapTrap(ClapTrap& rhs) : _name(rhs._name), _hitPoints(rhs._hitPoints), _energyPoints(rhs._energyPoints), _attackDamage(rhs._attackDamage) {
+	std::cout << "claptrap copy constructor\n";
 }
+
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
     if (this != &rhs) {
         this->_name = rhs._name;
@@ -14,6 +24,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
         this->_energyPoints = rhs._energyPoints;
         this->_attackDamage = rhs._attackDamage;
     }
+	std::cout << "claptrap copy assignment\n";
     return *this;
 }
 
@@ -21,8 +32,17 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 // When ClapTrack attacks, it causes its target to lose <attack damage> hit points.
 void ClapTrap::attack(const std::string& target)
 {
-    std::cout << "ClapTrap " <<  getName() << " attacks " << target << ", causing " << getAP() << " points of damage!"<< std::endl;
-    this->_energyPoints -= 1;
+	if (_energyPoints > 0)
+	{
+    	std::cout << "ClapTrap " <<  getName() << " attacks " << target << ", causing " << getAP() << " points of damage!"<< std::endl;
+    	_energyPoints -= 1;
+		_dothing = true;
+	}
+	else
+	{
+		std::cout << "not enough energy points to attack\n";
+		_dothing = false;
+	}
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
@@ -33,8 +53,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 //When ClapTrap repairs itself, it gets <amount> hit points back.
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (_energyPoints > 0)
+	{
     _hitPoints += amount;
     std::cout << getName() << " repaired " << amount << " HP\n";
+	}
+	else
+		std::cout << "not enough energy points to repair\n";
+
 }
 
 //Getters and Setters
@@ -61,6 +87,12 @@ int ClapTrap::getAP() const {
 }
 void ClapTrap::setAP(int AP) {
     _attackDamage = AP;
+}
+bool ClapTrap::getThing() const {
+    return _dothing;
+}
+void ClapTrap::setThing(bool thing) {
+    _dothing = thing;
 }
 
 

@@ -3,17 +3,19 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 class ClapTrap
 {
-    private:
+	protected:
+
         std::string _name;
         int _hitPoints;
         int _energyPoints;
         int _attackDamage;
+		bool _dothing;
     
     public:
         // Orthadox Canonical Form
+        ClapTrap();
         ClapTrap(std::string);
         ~ClapTrap();
         ClapTrap(ClapTrap&);
@@ -33,7 +35,8 @@ class ClapTrap
         void setEP(int);
         int getAP() const;
         void setAP(int);
-        
-        friend std::ostream& operator<<(std::ostream& os, const ClapTrap& obj);
 
+		void setThing(bool);
+        bool getThing() const;
     };
+        std::ostream& operator<<(std::ostream& os, const ClapTrap& obj);

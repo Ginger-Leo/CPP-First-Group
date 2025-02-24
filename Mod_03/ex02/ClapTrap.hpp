@@ -8,7 +8,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string _name;
         int _hitPoints;
         int _energyPoints;
@@ -17,7 +17,7 @@ class ClapTrap
     public:
         // Orthadox Canonical Form
         ClapTrap(std::string);
-        ~ClapTrap();
+         virtual ~ClapTrap();
         ClapTrap(ClapTrap&);
         ClapTrap& operator=(const ClapTrap& rhs); 
 

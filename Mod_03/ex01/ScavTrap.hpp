@@ -7,30 +7,21 @@
 class ScavTrap : public ClapTrap
 {
     private:
+	    std::string _name;
+        int _hitPoints;
+        int _energyPoints;
+        int _attackDamage;
 
-    public:
-      //  ScavTrap(const std::string& name) : ClapTrap(name) ;    
-      
+    public:      
         // Orthadox Canonical Form
-        ScavTrap(std::string name);
+        ScavTrap();
         ~ScavTrap();
-    /*    
-        ScavTrap(ScavTrap&);
-        ScavTrap& operator=(const ScavTrap& rhs); 
+        ScavTrap(const ScavTrap&);
+		ScavTrap& operator=(const ScavTrap&);
 
-        
-         // Getter and Setters
-        std::string getName() const;
-        void setName(std::string);
-        int getHP()const;
-        void setHP(int);
-        int getEP()const;
-        void setEP(int);
-        int getAP() const;
-        void setAP(int);
-        friend std::ostream& operator<<(std::ostream& os, const ScavTrap& obj);
-    */
+        ScavTrap(std::string);
+    
         // Manditory Functions
         void guardGate();
-        
+
 };

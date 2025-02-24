@@ -10,13 +10,16 @@ class ClapTrap
         int _hitPoints;
         int _energyPoints;
         int _attackDamage;
+		bool _dothing;
     
     public:
         // Orthadox Canonical Form
-        ClapTrap(std::string);
+        ClapTrap();
         ~ClapTrap();
         ClapTrap(ClapTrap&);
         ClapTrap& operator=(const ClapTrap& rhs); 
+        
+		ClapTrap(std::string);
 
         // Manditory Functions
         void attack(const std::string& target);
@@ -32,7 +35,8 @@ class ClapTrap
         void setEP(int);
         int getAP() const;
         void setAP(int);
-        
-        friend std::ostream& operator<<(std::ostream& os, const ClapTrap& obj);
+		void setThing(bool);
+        bool getThing() const;
 
     };
+        std::ostream& operator<<(std::ostream& os, const ClapTrap& obj);
