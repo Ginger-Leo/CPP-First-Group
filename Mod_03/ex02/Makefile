@@ -2,7 +2,7 @@ NAME		= FragTrap
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
 
-CFILES 		= 	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+CFILES 		= 	main.cpp ClapTrap.cpp FragTrap.cpp
 				
 			  	
 OFILES  	= $(CFILES:.cpp=.o) 

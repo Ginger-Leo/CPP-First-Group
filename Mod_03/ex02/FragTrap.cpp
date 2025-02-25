@@ -2,12 +2,16 @@
 
 #include "FragTrap.hpp"
 
-    FragTrap::FragTrap() : ClapTrap()
+    FragTrap::FragTrap()
     {
+		_name = "default";
+		_hitPoints = 100;
+		_energyPoints = 100;
+		_attackDamage = 30;
         std::cout << "default Fragtrap contructor\n";
     }
 
-    FragTrap::FragTrap(std::string name) : ClapTrap(name)
+    FragTrap::FragTrap(std::string name)
     {
         std::cout << "named Fragtrap contructor\n";
 		_name = name;

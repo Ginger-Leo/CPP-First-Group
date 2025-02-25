@@ -9,6 +9,7 @@ int main()
 {
 	std::cout << "\n\n" << std::setw(8) << "" << "\033[4mPhase 1\033[0m\n";
     {
+		ClapTrap NN;
     	ClapTrap CT("Jermaine");
 		ClapTrap mk2("Peter");
 

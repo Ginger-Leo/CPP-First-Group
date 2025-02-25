@@ -1,5 +1,4 @@
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include <iomanip>
 
@@ -19,19 +18,12 @@ int main()
 		}
     }
 
+    
     std::cout << "\n\n" << std::setw(8) << "" << "\033[4mPhase 2\033[0m\n";
     {
-    ScavTrap Scavvy("Scavvy");
-    Scavvy.guardGate();
-    }
-
-    std::cout << "\n\n" << std::setw(8) << "" << "\033[4mPhase 3\033[0m\n";
-    {
         ClapTrap CT1("Eric");
-        ScavTrap ST1("Theodore");
         FragTrap FT1("Arnold");
 
-        ST1.guardGate();
         FT1.highFivesGuys();
 
     }

@@ -7,21 +7,19 @@
 class ScavTrap : public ClapTrap
 {
     private:
-	    std::string _name;
-        int _hitPoints;
-        int _energyPoints;
-        int _attackDamage;
-
+	
     public:      
         // Orthadox Canonical Form
         ScavTrap();
-        ~ScavTrap();
+        ScavTrap(std::string);
+        ~ScavTrap() override;
         ScavTrap(const ScavTrap&);
 		ScavTrap& operator=(const ScavTrap&);
 
-        ScavTrap(std::string);
     
         // Manditory Functions
         void guardGate();
+		
+		void attack(const std::string& target) override;
 
 };
