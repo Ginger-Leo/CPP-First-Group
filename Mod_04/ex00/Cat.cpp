@@ -1,7 +1,8 @@
 #include "Cat.hpp"
 
-	Cat::Cat() : type("Cat like Animal")
+	Cat::Cat()
 	{
+		type = "Cat like Animal";
 		std::cout << "default Cat constructor called\n";
 	}
 
@@ -10,18 +11,19 @@
     	std::cout << "default Cat destructor called\n";
 	}
 
-	Cat::Cat(Cat& ref) : type(ref.type)
+	Cat::Cat(Cat& ref)
 	{
-		std	::cout << "default Cat copy constructor called\n";
+		type = ref.type;
+		std	::cout << "Cat copy constructor called\n";
 	}
 
 	Cat& Cat::operator=(const Cat& rhs)
 	{
 		if (this != &rhs)
 		{
-			this-> type = rhs.type;
+			Animal::operator=(rhs);
 		}
-		std::cout << "default Cat copy assignment operator called\n";
+		std::cout << "Cat copy assignment operator called\n";
 	
 		return *this;
 	} 

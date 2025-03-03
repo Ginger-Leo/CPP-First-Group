@@ -8,22 +8,22 @@
 
 	Cat::~Cat()
 	{
-    	std::cout << "default Cat destructor called\n";
+    	std::cout << "Cat destructor called\n";
 		delete Cat_brain;
 	}
 
 	Cat::Cat(Cat& ref) : type(ref.type)
 	{
-		std	::cout << "default Cat copy constructor called\n";
+		std	::cout << "Cat copy constructor called\n";
 	}
 
 	Cat& Cat::operator=(const Cat& rhs)
 	{
 		if (this != &rhs)
 		{
-			this-> type = rhs.type;
+			Animal::operator=(rhs);
 		}
-		std::cout << "default Cat copy assignment operator called\n";
+		std::cout << "Cat copy assignment operator called\n";
 	
 		return *this;
 	} 

@@ -1,27 +1,29 @@
 #include "Dog.hpp"
 
-	Dog::Dog() : type("Dog like Animal") 
+	Dog::Dog() : Animal()
 	{
+		type = "Dog like Animal"; 
 		std::cout << "default Dog constructor called\n";
 	}
 
 	Dog::~Dog()
 	{
-		std::cout << "default Dog destructor called\n";	
+		std::cout << "Dog destructor called\n";	
 	}
 
-	Dog::Dog(Dog& ref) : type(ref.type)
+	Dog::Dog(Dog& ref) 
 	{
-		std	::cout << "default Dog copy constructor called\n";
+		type = ref.type;
+		std	::cout << "Dog copy constructor called\n";
 	}
 
 	Dog& Dog::operator=(const Dog& rhs)
 	{
 		if (this != &rhs)
 		{
-			this-> type = rhs.type;
+			Animal::operator=(rhs);
 		}
-		std::cout << "default Dog copy assignment operator called\n";
+		std::cout << "Dog copy assignment operator called\n";
 	
 		return *this;
 	}  

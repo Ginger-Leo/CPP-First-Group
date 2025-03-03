@@ -20,7 +20,8 @@ int main()
     
         delete meta;
         delete j;
-        delete i;
+		std::cout << "HERE\n";
+		delete i;
     }
     {
         std:: cout << "\n\n",
@@ -37,6 +38,15 @@ int main()
         {
             delete herd[j];
         }
+		Animal* Mark = new Dog();
+		Animal* Ed = new Dog();
+
+		// Mark = Ed;
+
+		delete Mark;
+		delete Ed;
+
     }
+
         return 0;
 }

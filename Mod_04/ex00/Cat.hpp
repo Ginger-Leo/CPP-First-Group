@@ -6,18 +6,18 @@
 class Cat : public Animal
 {
     protected:
-		std::string type;
+		
     private:
 	
     public:
 		Cat();
-		virtual ~Cat();
+		~Cat() override;
 		Cat(Cat&);
 		Cat& operator=(const Cat&); 
 
         std::string getType() const;
         void setType(std::string);
 
-		virtual void makeSound() const; // will use own function, not base class function
+		void makeSound() const override; // will use own function, not base class function
     
 };
