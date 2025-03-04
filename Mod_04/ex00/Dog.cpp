@@ -2,7 +2,7 @@
 
 	Dog::Dog() : Animal()
 	{
-		type = "Dog like Animal"; 
+		type = "Dog"; 
 		std::cout << "default Dog constructor called\n";
 	}
 
@@ -11,7 +11,7 @@
 		std::cout << "Dog destructor called\n";	
 	}
 
-	Dog::Dog(Dog& ref) 
+	Dog::Dog(Dog& ref) : Animal(ref)
 	{
 		type = ref.type;
 		std	::cout << "Dog copy constructor called\n";

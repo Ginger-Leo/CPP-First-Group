@@ -22,7 +22,7 @@
 			{
 				this-> type = rhs.type;
 			}
-			std::cout << "wrong animal copy assignment operator called\n";
+			std::cout << "wrong ANIMAL copy assignment operator called\n";
 
 			return *this;
 		}
@@ -32,12 +32,12 @@
 			return type;
 		}
 
-        void WrongAnimal::setType(std::string new_type)
+        void WrongAnimal::WrongAnimal::setType(std::string new_type)
 		{
 			type = new_type;
 		}
 
-        void makeSound()
+        void WrongAnimal::makeSound()
 		{
 			std::cout << "default wrong animal sound.....mooark!\n";
 		}

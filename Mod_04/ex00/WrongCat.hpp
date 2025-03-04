@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string.h>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {

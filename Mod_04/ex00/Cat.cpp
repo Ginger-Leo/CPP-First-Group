@@ -1,8 +1,8 @@
 #include "Cat.hpp"
 
-	Cat::Cat()
+	Cat::Cat() : Animal()
 	{
-		type = "Cat like Animal";
+		type = "Cat";
 		std::cout << "default Cat constructor called\n";
 	}
 
@@ -11,7 +11,7 @@
     	std::cout << "default Cat destructor called\n";
 	}
 
-	Cat::Cat(Cat& ref)
+	Cat::Cat(Cat& ref) : Animal(ref)
 	{
 		type = ref.type;
 		std	::cout << "Cat copy constructor called\n";

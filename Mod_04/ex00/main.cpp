@@ -19,6 +19,12 @@ int main()
     delete meta;
     delete j;
     delete i;
+
+	WrongAnimal Camelk;
+	WrongCat Crat;
     
+	Camelk.makeSound();
+	Crat.makeSound();
+
     return 0;
 }
