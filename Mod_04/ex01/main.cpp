@@ -21,35 +21,41 @@ int main()
     
         delete meta;
         delete j;
-		std::cout << "HERE\n";
 		delete i;
     }
     {
         std:: cout << "\n\n",
         std::cout << std::setw(8) << "" << "\033[4mPhase 2\033[0m\n";
-        Animal* herd[10];
-        for (int i = 0; i < 10; ++i) 
-        {
-            if (i % 2 == 0)
-                herd[i] = new Dog();
-            else
-                herd[i] = new Cat();
-        }
-        for (int j = 0; j < 10; ++j)
-        {
-            delete herd[j];
-        }
-		Animal Mark = Dog();
-		Animal Gary =  Dog();
-		// Animal Ed =  Dog(*dynamic_cast<Dog*>(Mark));
-		
+        // Animal* herd[10];
+        // for (int i = 0; i < 10; ++i) 
+        // {
+        //     if (i % 2 == 0)
+        //         herd[i] = new Dog();
+        //     else
+        //         herd[i] = new Cat();
+        // }
+        // for (int j = 0; j < 10; ++j)
+        // {
+        //     delete herd[j];
+        // }
 
-        // delete Gary;
-		Gary = Mark;
+
+		Animal Mark = Dog();
+		Animal Gary = Dog();
+		Dog Bono;
+		Dog Johno;
+		// Animal Ed =  Dog(*dynamic_cast<Dog*>(Mark));
+		Bono.setType("mouse");
+		Johno.setType("moose");
+		Johno = Bono;
+		std::cout << Johno.getType() << std::endl;
+		// Bono.makeSound();
+		// Mark;
+		// Mark.makeSound();
 		// Ed(Mark)
 		// Mark = Ed;
 
-        // delete Mark;
+    
         // delete Ed;
 
     }

@@ -3,17 +3,10 @@
 
 	Dog::Dog() :  Animal()
 	{
-		type = "Dog like Animal";
+		type = "Dog";
 		std::cout << "default Dog constructor called\n";
 		Dog_brain = new Brain;
 	}
-
-	// Dog::Dog(std::string type) : Animal(std::string new_type)
-	// {  
-	// 	this->type = type; 
-	// 	std::cout << "default Dog constructor called\n";
-	// 	Dog_brain = new Brain;
-	// }
 
 	Dog::~Dog()
 	{
@@ -36,6 +29,8 @@
 			if (Dog_brain)
 				delete Dog_brain;
 			Dog_brain = new Brain(*rhs.Dog_brain);
+			type = rhs.type;
+			
 		}
 		std::cout << "Dog copy assignment operator called\n";
 	
