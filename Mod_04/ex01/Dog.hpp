@@ -13,9 +13,8 @@ class Dog : public Animal
       	Brain *Dog_brain;
     public:
 		Dog();
-		Dog(std::string);
 		~Dog() override;
-		Dog(Dog&);
+		Dog(const Dog&);
 		Dog& operator=(const Dog&); 
 
         std::string getType() const;

@@ -1,8 +1,9 @@
-
- #include "Animal.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include <iomanip>
 
 int main()
@@ -38,13 +39,18 @@ int main()
         {
             delete herd[j];
         }
-		Animal* Mark = new Dog();
-		Animal* Ed = new Dog();
+		Animal Mark = Dog();
+		Animal Gary =  Dog();
+		// Animal Ed =  Dog(*dynamic_cast<Dog*>(Mark));
+		
 
+        // delete Gary;
+		Gary = Mark;
+		// Ed(Mark)
 		// Mark = Ed;
 
-		delete Mark;
-		delete Ed;
+        // delete Mark;
+        // delete Ed;
 
     }
 

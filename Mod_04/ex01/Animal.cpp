@@ -4,7 +4,7 @@ Animal::Animal() : type("Basic Animal")
 {
     std::cout << "default Animal constructor called\n";
 }
-Animal::Animal(Animal& ref) : type(ref.type) 
+Animal::Animal(const Animal& ref) : type(ref.type) 
 {
     std::cout << "default Animal copy constructor called\n";
 }

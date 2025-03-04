@@ -1,4 +1,5 @@
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 	Cat::Cat() : type("Cat like Animal")
 	{

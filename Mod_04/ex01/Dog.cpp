@@ -1,17 +1,19 @@
 #include "Dog.hpp"
+#include "Brain.hpp"
 
-	Dog::Dog() : type("Dog like Animal") 
+	Dog::Dog() :  Animal()
 	{
+		type = "Dog like Animal";
 		std::cout << "default Dog constructor called\n";
 		Dog_brain = new Brain;
 	}
 
-	Dog::Dog(std::string type)
-	{  
-		this->type = type; 
-		std::cout << "default Dog constructor called\n";
-		Dog_brain = new Brain;
-	}
+	// Dog::Dog(std::string type) : Animal(std::string new_type)
+	// {  
+	// 	this->type = type; 
+	// 	std::cout << "default Dog constructor called\n";
+	// 	Dog_brain = new Brain;
+	// }
 
 	Dog::~Dog()
 	{
@@ -19,11 +21,10 @@
 		delete Dog_brain;
 	}
 
-	Dog::Dog(Dog& ref) 	
+	Dog::Dog(const Dog& ref) : Animal(ref)
 	{
-		type = ref.type, 
-		Dog_brain = new Brain();
-		Dog_brain = ref.Dog_brain;
+		type = ref.type;
+		Dog_brain = new Brain(*ref.Dog_brain);
 		std::cout << "Dog copy constructor called\n";
 	}
 
