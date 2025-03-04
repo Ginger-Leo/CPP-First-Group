@@ -3,41 +3,13 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include <iomanip>
 
 int main()
 {
-    {
-        std::cout << std::setw(8) << "" << "\033[4mPhase 1\033[0m\n";
-       
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        j->makeSound();
-     
     
-   
-        delete j;
-        delete i;
-    }
-    {
-        std:: cout << "\n\n",
-        std::cout << std::setw(8) << "" << "\033[4mPhase 2\033[0m\n";
-        Animal* herd[10];
-        for (int i = 0; i < 10; ++i) 
-        {
-            if (i % 2 == 0)
-                herd[i] = new Dog();
-            else
-                herd[i] = new Cat();
-        }
-        for (int j = 0; j < 10; ++j)
-        {
-            delete herd[j];
-        }
-    }
 	{
 		std:: cout << "\n\n",
         std::cout << std::setw(8) << "" << "\033[4mPhase 3\033[0m\n";

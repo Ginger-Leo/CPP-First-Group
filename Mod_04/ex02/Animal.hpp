@@ -11,8 +11,8 @@ class Animal
 
     public:
         Animal();
-        Animal(Animal&);
-        Animal& operator=(const Animal& rhs); 
+        Animal(const Animal&);
+        Animal& operator=(const Animal&); 
         virtual ~Animal();
 
         std::string getType() const;

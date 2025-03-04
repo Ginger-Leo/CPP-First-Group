@@ -9,17 +9,19 @@ class Dog : public Animal
 {
     protected:
         std::string type;
+
     private:
       Brain *Dog_brain;
+
     public:
 		Dog();
-		virtual ~Dog();
-		Dog(Dog&);
+		~Dog() override;
+		Dog(const Dog&);
 		Dog& operator=(const Dog&); 
 
         std::string getType() const;
         void setType(std::string);
 
-		virtual void makeSound() const; // will use own function, not base class function
+		void makeSound() const override; // will use own function, not base class function
     
 };
