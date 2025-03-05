@@ -30,7 +30,7 @@ void WrongCat::setType(std::string newtype)
 	type = newtype;
 }
 
-void WrongCat::makeSound()
+void WrongCat::makeSound() const
 {
 	std::cout << "default wrong cat sound.....fanrkkk!\n";
 }

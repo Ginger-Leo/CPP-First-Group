@@ -17,7 +17,7 @@ class Dog : public Animal
 		Dog(const Dog&);
 		Dog& operator=(const Dog&); 
 
-        std::string getType() const;
+        std::string getType() const override;
         void setType(std::string);
 
 		void makeSound() const override; // will use own function, not base class function

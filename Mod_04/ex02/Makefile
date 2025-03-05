@@ -1,8 +1,8 @@
-NAME		= Abstract
+NAME		= Fire
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
 
-CFILES 		= 	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
+CFILES 		= 	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 				
 			  	
 OFILES  	= $(CFILES:.cpp=.o) 

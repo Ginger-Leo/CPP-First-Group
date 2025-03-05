@@ -1,28 +1,89 @@
-
- #include "Animal.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-#include <iomanip>
 
 int main()
 {
-    
-	{
-		std:: cout << "\n\n",
-        std::cout << std::setw(8) << "" << "\033[4mPhase 3\033[0m\n";
+    std::cout << "Test: making a herd\n";
+    Animal* herd[10];
+    for (int i = 0; i < 10; ++i) 
+    {
+        if (i % 2 == 0)
+             herd[i] = new Dog();
+         else
+             herd[i] = new Cat();
+     }
+     for (int j = 0; j < 10; ++j)
+     {
+         delete herd[j];
+     }
 
-		std::cout << "I cant show a pure virtual function working (abstract class) as it wont compile\n";
-		// Animal* D0G = new Dog;
-		// Animal* C4T = new Cat;
-		// Animal* M4N;
-	
-		// D0G->makeSound();
-		// C4T->makeSound();
-		// M4N-> makeSound();
-	
-	}
-        return 0;
+    std::cout << "\nTest: Create Animal\n";
+    //const Animal* meta = new Animal();            //uncomment to see compiling error due to pure virtual class
+    std::cout << std::endl;
+
+    std::cout << "Test: Create Dog\n";
+    const Animal* j = new Dog();
+    std::cout << std::endl;
+
+    std::cout << "Test: Create Cat\n";
+    const Animal* i = new Cat();
+    std::cout << std::endl;
+
+    std::cout << "Test: Dog type?\n";
+    std::cout << j->getType() << " " << std::endl;
+
+    std::cout << "Test: Cat type?\n";
+    std::cout << i->getType() << " " << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "Test: Cat sound\n";
+    i->makeSound(); 
+
+    std::cout << "Test: Dog sound\n";
+    j->makeSound();
+
+    std::cout << "Test: Animal sound\n";
+    //meta->makeSound();                             //uncomment to see compiling error due to pure virtual class
+    std::cout << std::endl;
+
+    //delete meta;                                   //uncomment to see compiling error due to pure virtual class
+    delete j;
+    delete i;
+
+    std::cout << std::endl;
+    std::cout << "Test: Create wrong Animal & wrong cat together\n";
+    const WrongAnimal* wrongCat = new WrongCat();
+    std::cout << wrongCat->getType() << " " << std::endl;
+    std::cout << std::endl;
+        
+    std::cout << "Test: wrong cat sound\n";
+    wrongCat->makeSound();
+    std::cout << std::endl;
+
+    delete wrongCat;
+     
+    std::cout << "\nTest: Dog Copy Constructor\n";
+    Dog originalDog;
+    originalDog.setType("Original Dog");
+    Dog copiedDog(originalDog);
+    std::cout << "Original Dog Type: " << originalDog.getType() << std::endl;
+    std::cout << "Copied Dog Type: " << copiedDog.getType() << std::endl;
+    copiedDog.makeSound();
+    std::cout << std::endl;
+
+    std::cout << "\nTest: Dog Copy Assignment Operator\n";
+    Dog anotherDog;
+    anotherDog.setType("another Dog");
+    Dog reassignedDog;
+    reassignedDog = anotherDog;
+    std::cout << "another Dog Type: " << anotherDog.getType() << std::endl;
+    std::cout << "reAssigned Dog Type: " << reassignedDog.getType() << std::endl;
+    reassignedDog.makeSound();
+    std::cout << std::endl;
+
+    return 0;
 }
+ 

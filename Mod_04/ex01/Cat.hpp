@@ -13,10 +13,10 @@ class Cat : public Animal
     public:
 		Cat();
 		~Cat() override;
-		Cat(Cat&);
+		Cat(const Cat&);
 		Cat& operator=(const Cat&); 
 
-        std::string getType() const;
+        std::string getType() const override;
         void setType(std::string);
 
 		void makeSound() const override; // will use own function, not base class function

@@ -9,16 +9,16 @@ class Cat : public Animal
     protected:
 		std::string type;
     private:
-	Brain *Cat_brain;
+		Brain *Cat_brain;
     public:
 		Cat();
-		virtual ~Cat();
-		Cat(Cat&);
+		~Cat() override;
+		Cat(const Cat&);
 		Cat& operator=(const Cat&); 
 
-        std::string getType() const;
+        std::string getType() const override;
         void setType(std::string);
 
-		virtual void makeSound() const; // will use own function, not base class function
+		void makeSound() const override; // will use own function, not base class function
     
 };

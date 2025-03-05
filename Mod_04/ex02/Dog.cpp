@@ -29,11 +29,13 @@
 			if (Dog_brain)
 				delete Dog_brain;
 			Dog_brain = new Brain(*rhs.Dog_brain);
+			type = rhs.type;
+			
 		}
 		std::cout << "Dog copy assignment operator called\n";
 	
 		return *this;
-	}
+	}  
 
     std::string Dog::getType() const
     {

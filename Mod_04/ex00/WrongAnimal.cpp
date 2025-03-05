@@ -2,12 +2,12 @@
 
 		WrongAnimal::WrongAnimal()
 		{
-			std::cout << "default wronng animal constructor called\n"; 
+			std::cout << "default wrong animal constructor called\n"; 
 		}
 
 		WrongAnimal::~WrongAnimal()
 		{
-			std::cout << "default wronng animal destructor called\n";
+			std::cout << "default wrong animal destructor called\n";
 		}
 
 		WrongAnimal::WrongAnimal(WrongAnimal& rhs)

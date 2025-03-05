@@ -1,64 +1,89 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-#include <iomanip>
 
 int main()
 {
+    std::cout << "Test: making a herd\n";
+    Animal* herd[10];
+    for (int i = 0; i < 10; ++i) 
     {
-        std::cout << std::setw(8) << "" << "\033[4mPhase 1\033[0m\n";
-        const Animal* meta = new Animal();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        j->makeSound();
-        meta->makeSound();
-    
-        delete meta;
-        delete j;
-		delete i;
-    }
-    {
-        std:: cout << "\n\n",
-        std::cout << std::setw(8) << "" << "\033[4mPhase 2\033[0m\n";
-        // Animal* herd[10];
-        // for (int i = 0; i < 10; ++i) 
-        // {
-        //     if (i % 2 == 0)
-        //         herd[i] = new Dog();
-        //     else
-        //         herd[i] = new Cat();
-        // }
-        // for (int j = 0; j < 10; ++j)
-        // {
-        //     delete herd[j];
-        // }
+        if (i % 2 == 0)
+             herd[i] = new Dog();
+         else
+             herd[i] = new Cat();
+     }
+     for (int j = 0; j < 10; ++j)
+     {
+         delete herd[j];
+     }
 
+    std::cout << "\nTest: Create Animal\n";
+    const Animal* meta = new Animal();
+    std::cout << std::endl;
 
-		Animal Mark = Dog();
-		Animal Gary = Dog();
-		Dog Bono;
-		Dog Johno;
-		// Animal Ed =  Dog(*dynamic_cast<Dog*>(Mark));
-		Bono.setType("mouse");
-		Johno.setType("moose");
-		Johno = Bono;
-		std::cout << Johno.getType() << std::endl;
-		// Bono.makeSound();
-		// Mark;
-		// Mark.makeSound();
-		// Ed(Mark)
-		// Mark = Ed;
+    std::cout << "Test: Create Dog\n";
+    const Animal* j = new Dog();
+    std::cout << std::endl;
 
-    
-        // delete Ed;
+    std::cout << "Test: Create Cat\n";
+    const Animal* i = new Cat();
+    std::cout << std::endl;
 
-    }
+    std::cout << "Test: Dog type?\n";
+    std::cout << j->getType() << " " << std::endl;
 
-        return 0;
+    std::cout << "Test: Cat type?\n";
+    std::cout << i->getType() << " " << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "Test: Cat sound\n";
+    i->makeSound(); 
+
+    std::cout << "Test: Dog sound\n";
+    j->makeSound();
+
+    std::cout << "Test: Animal sound\n";
+    meta->makeSound();
+    std::cout << std::endl;
+
+    delete meta;
+    delete j;
+    delete i;
+
+    std::cout << std::endl;
+    std::cout << "Test: Create wrong Animal & wrong cat together\n";
+    const WrongAnimal* wrongCat = new WrongCat();
+    std::cout << wrongCat->getType() << " " << std::endl;
+    std::cout << std::endl;
+        
+    std::cout << "Test: wrong cat sound\n";
+    wrongCat->makeSound();
+    std::cout << std::endl;
+
+    delete wrongCat;
+     
+    std::cout << "\nTest: Dog Copy Constructor\n";
+    Dog originalDog;
+    originalDog.setType("Original Dog");
+    Dog copiedDog(originalDog);
+    std::cout << "Original Dog Type: " << originalDog.getType() << std::endl;
+    std::cout << "Copied Dog Type: " << copiedDog.getType() << std::endl;
+    copiedDog.makeSound();
+    std::cout << std::endl;
+
+    std::cout << "\nTest: Dog Copy Assignment Operator\n";
+    Dog anotherDog;
+    anotherDog.setType("another Dog");
+    Dog reassignedDog;
+    reassignedDog = anotherDog;
+    std::cout << "another Dog Type: " << anotherDog.getType() << std::endl;
+    std::cout << "reAssigned Dog Type: " << reassignedDog.getType() << std::endl;
+    reassignedDog.makeSound();
+    std::cout << std::endl;
+
+    return 0;
 }
+ 

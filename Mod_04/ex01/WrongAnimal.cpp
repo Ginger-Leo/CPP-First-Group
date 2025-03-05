@@ -37,7 +37,7 @@
 			type = new_type;
 		}
 
-        void WrongAnimal::makeSound()
+        void WrongAnimal::makeSound() const
 		{
 			std::cout << "default wrong animal sound.....mooark!\n";
 		}
