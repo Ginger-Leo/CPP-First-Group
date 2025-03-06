@@ -84,6 +84,28 @@ int main()
     reassignedDog.makeSound();
     std::cout << std::endl;
 
+	Cat cat1;
+	cat1.setIdea("lessgoo", 0);
+	Cat cat2(cat1);
+	std::cout << cat2.getIdea(0) << std::endl;
+	std::cout << "CAT 1 IDEA -------------\n";
+	cat2.setIdea("BABOON", 1);
+	std::cout << cat1.getIdea(1) << std::endl;
+	std::cout << cat2.getIdea(1) << std::endl;
+	
+	std::cout << std::endl;
+
+	Dog*	dog1 = new Dog();
+	dog1->setIdea("dawg", 0);
+	Dog*	dog2 = new Dog();
+	*dog2 = *dog1;
+	std::cout << dog2->getIdea(0) << std::endl;
+	std::cout << "DOG 1 IDEA -------------\n";
+	dog2->setIdea("NUNCHUCKK", 1);
+	std::cout << dog1->getIdea(1) << std::endl;
+	std::cout << dog2->getIdea(1) << std::endl;
+
+
     return 0;
 }
  

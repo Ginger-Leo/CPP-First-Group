@@ -52,3 +52,20 @@ Cat::Cat() :  Animal()
 	{
         std::cout << "Cat sounding noise\n";
 	}
+
+	std::string Cat::getIdea(unsigned int i) const
+	{
+		if (i > 99)
+			return "your  cat brain is too small for that ammount of ideas\n";
+		return this->Cat_brain->getIdea(i); 
+	}
+
+	void Cat::setIdea(std::string new_idea, unsigned int i)
+	{
+		if (i > 99)
+		{
+			std::cerr << "ideas are too far out of the box (brain)\n";
+			return ;
+		}
+		this->Cat_brain->setIdea(new_idea, i);
+	}

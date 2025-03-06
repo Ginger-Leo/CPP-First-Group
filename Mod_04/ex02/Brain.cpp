@@ -12,25 +12,36 @@ Brain::~Brain()
 Brain::Brain(const Brain &other)
 {
     std::cout << "copy Brain constructor called\n";
-    this->thing = other.thing;
+	for (int i = 0; i < 99; i++)
+	{
+		ideas[i] = other.ideas[i];
+	}
 }
 Brain& Brain::operator=(const Brain &rhs)
 {
     if (this != &rhs)
     {
-        this->thing = rhs.thing;
+      for (int i = 0; i < 99; i++)
+	  {
+			ideas[i] = rhs.ideas[i];
+	  }
     }
     std::cout << "Brain copy assignment operator called\n";
-
     return *this;
 }
-/*
-std::string Brain::getIdeas()
-{
 
-}
-void Brain::setIdeas()
+std::string Brain::getIdea(unsigned int i)
 {
-
+	if (i > 99)
+		return "your brain is too small for that ammount of ideas\n";
+	return ideas[i];
 }
-*/
+void Brain::setIdea(std::string new_idea, unsigned int i)
+{
+	if (i > 99)
+	{
+		std::cerr << "ideas are too far out of the box (brain)\n";
+		return ;
+	}
+	ideas[i] = new_idea;
+}

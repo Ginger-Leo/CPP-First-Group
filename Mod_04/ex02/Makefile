@@ -1,4 +1,4 @@
-NAME		= Fire
+NAME		= Abstract
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++11
 

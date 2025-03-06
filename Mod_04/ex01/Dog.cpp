@@ -51,3 +51,20 @@
 	{
         std::cout << "Dog sounding noise\n";
 	}
+
+	std::string Dog::getIdea(unsigned int i) const
+	{
+		if (i > 99)
+			return "your  Dog brain is too small for that ammount of ideas\n";
+		return this->Dog_brain->getIdea(i); 
+	}
+
+	void Dog::setIdea(std::string new_idea, unsigned int i)
+	{
+		if (i > 99)
+		{
+			std::cerr << "ideas are too far out of the box (brain)\n";
+			return ;
+		}
+		this->Dog_brain->setIdea(new_idea, i);
+	}

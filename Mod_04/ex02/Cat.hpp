@@ -19,6 +19,9 @@ class Cat : public Animal
         std::string getType() const override;
         void setType(std::string);
 
+        std::string getIdea(unsigned int) const;
+        void setIdea(std::string, unsigned int);
+
 		void makeSound() const override; // will use own function, not base class function
     
 };

@@ -21,10 +21,11 @@ int main()
     delete i;
 
 	WrongAnimal Camelk;
-	WrongCat Crat;
+	WrongAnimal* Crat = new WrongCat;
     
 	Camelk.makeSound();
-	Crat.makeSound();
+	Crat->makeSound();
 
+	delete Crat;
     return 0;
 }

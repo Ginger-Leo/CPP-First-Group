@@ -8,13 +8,12 @@ class Brain
 
     private:
         std::string ideas[100];
-        int thing = 0;
     public:
         Brain();
         ~Brain();
         Brain(const Brain &other);
         Brain &operator=(const Brain &other);
 
-       // std::string getIdeas();
-       // void setIdeas();
+       std::string getIdea(unsigned int);
+       void setIdea(std::string, unsigned int);
 };
